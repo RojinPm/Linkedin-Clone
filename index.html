@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LinkedIn</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+
+      body {
+        background-color: #f3f2ef;
+      }
+
+      .navbar {
+        background-color: white;
+        width: 100vw;
+        height: 60px;
+        border-bottom: 1px solid #00000014;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .nav-content {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 10px;
+      }
+
+      .nav-img {
+        margin-left: 18%;
+        color: #0a66c2;
+      }
+
+      .nav-search {
+        height: 35px;
+        width: 270px;
+        margin-left: 7px;
+        border: none;
+        border-radius: 4px;
+        background-color: #eef3f8;
+        text-indent: 12px;
+      }
+
+      .navigation {
+        margin-left: 12%;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-icon {
+        text-decoration: none;
+        color: #666;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 20px;
+        margin-right: 7px;
+        font-size: 12px;
+        font-weight: 300;
+      }
+
+      .main {
+        height: 100%;
+        display: flex;
+        margin: 0 auto;
+        margin-top: 70px;
+        max-width: 60%;
+        justify-content: center;
+       
+      
+
+      }
+
+      .left {
+        /* border: 1px solid black; */
+        width: 225px;
+        margin-top: 35px;
+      }
+
+      .center {
+        /* border: 1px solid black; */
+        flex-grow: 1;
+        margin-top: 35px;
+        margin-left: 25px;
+      }
+
+      .right {
+        /* border: 1px solid black; */
+        width: 300px;
+        margin-top: 35px;
+      }
+
+      .create-posts {
+        background-color: white;
+        height: 120px;
+        width: 540px;
+        border: 1px solid #6e6e6e42;
+        border-radius: 5px;
+      }
+
+      .post-image {
+        height: 48px;
+        width: 48px;
+        border-radius: 50%;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+
+      .create-post-top {
+        display: flex;
+      }
+
+      .post-input {
+        height: 40px;
+        flex: 1;
+        border-radius: 25px;
+        border: 1px solid #aaa;
+        margin: 14px;
+        text-indent: 15px;
+      }
+      .create-post-bottom {
+        display: flex;
+        justify-content: space-around;
+      }
+      .post-button {
+        background-color: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        color: #00000099;
+      }
+
+      .mr-10 {
+        margin-right: 10px;
+      }
+
+      .blue-button {
+        color: #70b5f9;
+      }
+      .green-button {
+        color: #7fc15e;
+      }
+      .orange-button {
+        color: #e7a33e;
+      }
+      .pink-button {
+        color: #f89295;
+      }
+      .posts-hr{
+
+       border-top: 1px solid #000000aa;
+       margin-top: 35px;
+       border-color: rgba(0,0,0,.15);
+
+      }
+
+     .post{
+   
+        border-radius: 10px;
+        background-color: white;
+        border: 1px solid #eeeeee;
+        margin-top: 15px;
+        display: flex;
+        flex-direction: column;
+
+     }
+     .post-info{
+
+      display: flex;
+      align-items: center;
+
+     }
+
+     .post-metadata{
+        
+      display: flex;
+      flex-direction: column;
+     margin-top: 7px;
+     margin-left: 10px;
+     font-size: 15px;
+     line-height: 1.3rem;
+       
+
+     }
+     .faded-text{
+        
+        color: rgb(78, 75, 75);
+        font-size: small;
+
+
+     }
+     .post-creator{
+
+      font-weight: 600;
+
+     }
+    .post-data{
+
+ font-size: 15px;
+ color: grey;
+ margin-left: 15px;
+ margin-top: 10px;
+
+    }
+    .read-more{
+
+margin-left: 430px;
+margin-top: 10px;
+color:rgb(78, 75, 75);;
+
+    }
+    .center-content{
+ 
+    display: flex;
+    align-items: center;
+
+
+    }
+    .likes{
+
+    color:#0a66c2;
+    margin-left: 15px;
+    font-size: 18px;
+
+    }
+    .no-likes{
+
+     margin-left:7px;
+
+    }
+    .intreaction-buttons{
+
+     background: transparent;
+     border: none;
+     display: flex;
+     align-items: center;
+     margin-right: 10px;
+     margin-bottom: 15px;
+     margin-top: 2px;
+     font-size: 15px;
+     
+
+    }
+    .post-interactions{
+
+     display: flex;
+     margin-top: 15px;
+ 
+    }
+    .post-content-image{
+  
+    height: 600px;
+    width: 100%;
+    margin-top: 12px;
+
+
+
+    }
+    .After-post{
+
+      margin-top: 16px;
+
+    }
+   .left-content{
+
+
+       background-color: white;
+        height: 400px;
+        width: 200px;
+        border: 1px solid #6e6e6e42;
+        border-radius: 15px;
+      
+
+
+   }
+
+   .left-top-background{
+
+     overflow: hidden;
+     display: flex;
+   
+
+   }
+
+   .left-round-image{
+  
+    margin-left: 35px;
+    height: 72px;
+    width: 72px;
+   position: relative;
+   bottom: 45px;
+   left: 33px;
+
+   }
+
+
+
+ .header-heading{
+
+   font-weight: 600;
+   color: rgba(0,0,0,0.9);
+   font-size: 20px;
+   text-decoration: none;
+  
+
+ }
+ .header-part{
+
+ text-align: center; 
+  position: relative;
+  bottom: 30px;
+ 
+ }
+ .paragraph-header-content{
+
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(0,0,0,0.6);
+
+
+ }
+ .left-hr{
+
+    border-top: 1px solid #000000aa;
+    border-color: rgba(0,0,0,.15);
+    position: relative;
+    bottom: 25px;
+ 
+
+ }
+ .content-inside{
+
+  display: flex;
+
+ }
+ .left-heading{
+
+  margin-left: 60px;
+  font-size: 14px;
+  margin-top: -6px;
+
+
+ }
+ .left-paragraph{
+
+   margin: 10px;
+   margin-top: -10px;
+
+ }
+ .last-paragraph{
+ 
+ margin-top: -10px;
+
+ }
+ .last-heading{
+ 
+  margin-left: 80px;
+
+ }
+ .paragraph-content-left{
+ 
+  
+  font-weight: 500;
+  font-size: 12px;
+  color: rgba(0,0,0,0.6);
+  
+   margin: 10px;
+    margin-top: -10px;
+
+
+
+ }
+ .paragraph-contents{
+
+  display: flex;
+  align-items: center;
+
+
+ }
+ .Svg-image{
+
+
+   margin-top: -20px;
+    margin-left: 10px;
+
+ }
+ .new-hr{
+
+  position: relative;
+  bottom: 50px; 
+
+ }
+.last-para{
+
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+
+}
+.right{
+
+  display: flex;
+  flex-direction: column;
+
+}
+.First-right{
+
+      background-color: white;
+        height: 700px;
+        width: 400px;
+        border: 1px solid #6e6e6e42;
+        border-radius: 15px;
+        margin-left: 30px;
+      
+
+}
+.Second-right{
+
+  background-color: white;
+        height: 700px;
+        width: 400px;
+        border: 1px solid #6e6e6e42;
+        border-radius: 15px;
+        margin-left: 30px;
+        margin-top: 20px;
+      
+
+
+
+}
+.first-part{
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+.right-para-main{
+
+  margin:20px;
+  color: rgba(0,0,0,0.9);
+  font-size:1.2rem;
+
+}
+.icon-right{
+
+  position: relative;
+  right: 20px;
+
+}
+.link{
+ 
+ margin-top: 20px;
+ color: rgba(12, 12, 12, 0.9);
+ font-weight: 600;
+
+
+}
+.link-undertext-1,
+.link-undertext-2,
+.link-undertext-3,
+.link-undertext-4{
+
+  font-weight: 600;
+   color: rgba(0,0,0,0.6);
+   font-size: 14px;
+   text-decoration: none;
+ 
+
+}
+.link-last{
+
+  display: flex;
+  align-items: center;
+  color: #333;
+ 
+
+}
+.last-image{
+
+margin-left: 70px;
+margin-top: 10px;
+
+}
+.last-right-image{
+
+border-radius: 10px;
+margin-top: 7px;
+
+}
+.content-new{
+ margin-top: 20px;
+
+
+}
+
+
+
+
+
+    
+     
+
+
+
+
+
+
+
+    </style>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="nav-content">
+        <div class="nav-img">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="34"
+            height="34"
+            viewBox="0 0 34 34"
+            class="nav-logo"
+          >
+            <g>
+              <path
+                d="M34,2.5v29A2.5,2.5,0,0,1,31.5,34H2.5A2.5,2.5,0,0,1,0,31.5V2.5A2.5,2.5,0,0,1,2.5,0h29A2.5,2.5,0,0,1,34,2.5ZM10,13H5V29h5Zm.45-5.5A2.88,2.88,0,0,0,7.59,4.6H7.5a2.9,2.9,0,0,0,0,5.8h0a2.88,2.88,0,0,0,2.95-2.81ZM29,19.28c0-4.81-3.06-6.68-6.1-6.68a5.7,5.7,0,0,0-5.06,2.58H17.7V13H13V29h5V20.49a3.32,3.32,0,0,1,3-3.58h.19c1.59,0,2.77,1,2.77,3.52V29h5Z"
+                fill="currentColor"
+              ></path>
+            </g>
+          </svg>
+        </div>
+        <input class="nav-search" type="text" placeholder="Search" />
+        <nav class="navigation">
+          <a class="nav-icon">
+            <span class="material-icons"> home </span> Home
+          </a>
+          <a class="nav-icon">
+            <span class="material-icons"> people </span> My Network
+          </a>
+          <a class="nav-icon">
+            <span class="material-icons"> work </span> Jobs
+          </a>
+          <a class="nav-icon">
+            <span class="material-icons"> chat_bubble </span> Messaging
+          </a>
+          <a class="nav-icon">
+            <span class="material-icons"> notifications </span> Notifications
+          </a>
+          <a class="nav-icon">
+            <span class="material-icons"> person </span> Me
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <div class="main">
+
+
+      <!-- LEFT SECTION -->
+
+      <div class="left">
+
+       <div class="left-content">
+
+       <div class="left-top-background">
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 512" id="person-default" data-supported-dps="2048x512">
+          <path fill="none" d="M0 0h2048v512H0z" />
+          <path fill="#dbe7e9" d="M0 0h2048v512H0z" />
+          <path fill="#bfd3d6" d="M1408 0h640v512h-640z" />
+          <path d="M1236.29 0H0v512h1236.29a771.52 771.52 0 000-512z" fill="#a0b4b7" />
+        </svg>
+
+       </div>
+
+       <div class="left-round">
+
+        <img class="post-image left-round-image"src="Rojin.png">
+
+       </div>
+
+       <div class="header-part">
+
+       <a href="#" class="header-heading">Rojin Pm</a>
+       
+     
+        <p class="paragraph-header-content">Full stack web developer | UI/UX Designer</p>
+          
+
+      </div>
+
+      <div class="left-hr">
+
+      </div>
+
+       <div class="left-content-with-numbers">
+ 
+          <div class="content-inside">
+         
+            <p class="left-paragraph">Connections</p>
+
+            <h6 class="left-heading">19</h6>
+ 
+
+
+          </div>
+
+          <div class="content-inside">
+          
+
+            <p class="left-paragraph last-paragraph">Invitation</p>
+
+            <h6 class="left-heading last-heading">19</h6>
+
+
+          </div>
+
+          <div class="left-hr">
+
+          </div>
+
+
+
+          <div class="paragraph-contents">
+
+            <svg class="Svg-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" class="mercado-match" width="24" height="24" focusable="false">
+              <path d="M20 20a3.36 3.36 0 001-2.39V6.38A3.38 3.38 0 0017.62 3H6.38A3.36 3.36 0 004 4z" fill="#f8c77e"></path>
+              <path d="M4 4a3.36 3.36 0 00-1 2.38v11.24A3.38 3.38 0 006.38 21h11.24A3.36 3.36 0 0020 20z" fill="#e7a33e"></path>
+            </svg>
+           <h4 class="paragraph-content-left">Access exclusive tools &amp; insights</h4>
+
+
+          </div>
+
+          <div class="last-para">
+
+            <svg class="Svg-image" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" data-supported-dps="24x24" class="mercado-match" width="24" height="24" focusable="false">
+              <path d="M20 20a3.36 3.36 0 001-2.39V6.38A3.38 3.38 0 0017.62 3H6.38A3.36 3.36 0 004 4z" fill="#333"></path>
+              <path d="M4 4a3.36 3.36 0 00-1 2.38v11.24A3.38 3.38 0 006.38 21h11.24A3.36 3.36 0 0020 20z" fill="#336"></path>
+            </svg>
+           <h4 class="paragraph-content-left">Access exclusive tools &amp; insights</h4>
+
+
+          </div>
+
+          <div class="left-hr new-hr">
+
+          </div>
+             
+
+        </div>
+
+       </div>
+
+      </div>
+
+
+
+      <div class="center">
+        <div class="create-posts">
+          <div class="create-post-top">
+            <img class="post-image" src="Rojin.png"/>
+            <input placeholder="Start a Post" class="post-input" type="text" />
+          </div>
+          <div class="create-post-bottom">
+            <button class="post-button">
+              <span class="material-icons blue-button mr-10"> image </span>
+              Photo
+            </button>
+            <button class="post-button">
+              <span class="material-icons green-button mr-10">
+                play_circle_filled
+              </span>
+              Video
+            </button>
+            <button class="post-button">
+              <span class="material-icons orange-button mr-10"> event </span>
+              Event
+            </button>
+            <button class="post-button">
+              <span class="material-icons pink-button mr-10"> article </span>
+              Write Article
+            </button>
+          </div>
+
+          <div class="posts-hr">
+
+          </div>
+
+           <div class="post">
+     
+              <div class="post-info">  
+
+
+                <img src="ZTM.png" class="post-image" alt="Zero">
+                 <div class="post-metadata">
+
+                    <div class="post-creator">Zero-to-mastery</div>
+                     <div class="faded-text">7,523</div>
+                     <div class="faded-text">2d •
+                      <span class="material-icons faded-text">
+                      public
+                      </span></div>
+
+                 </div>
+
+              </div>
+    
+              
+
+        
+            
+              <div class="post-data">
+
+                Here's to all the brilliant Engineers, Designers 
+                and Programmers who made using social media so easy,
+                 even kids can do it effortlessly.
+
+              </div>
+
+              <div class="read-more">
+             
+                 ...see more
+
+              </div>
+
+            
+               <div class="post-content">
+
+
+                  <img class="post-content-image" src="https://media-exp1.licdn.com/dms/image/C5622AQGV9_HzuD-QwQ/feedshare-shrink_800/0/1625043676570?e=1628121600&v=beta&t=hst84vpnp9U4GErEomeWJfLiAsPSCJXt_a8YNZMSdas">
+
+
+
+               </div>
+
+
+
+              <div class="center-content">
+
+                <span class="material-icons likes">
+                  recommend
+                  </span>
+                  <span class="no-likes">20</span>
+              </div>
+
+              <div class="posts-hr After-post">
+
+              </div>
+
+              <div class="post-interactions">
+
+               <button class="intreaction-buttons">
+                 
+                <span class="material-icons">
+                  recommend
+                  </span>
+                 Like
+               </button>
+               <button class="intreaction-buttons">
+                <span class="material-icons">
+                  chat
+                  </span>
+                Comment
+              </button>
+              <button class="intreaction-buttons">
+                <span class="material-icons">
+                  share
+                  </span>
+                Share
+              </button>
+              <button class="intreaction-buttons">
+                <span class="material-icons">
+                  send
+                  </span>
+                Send
+              </button>
+
+
+
+              </div>
+
+
+            </div>
+
+
+
+
+        </div>
+      </div>
+
+
+       <!-- Right-section -->
+
+      <div class="right">
+
+       <div class="First-right">
+
+       <div class="first-part">
+
+        <h4 class="right-para-main">LinkedIn News</h4>
+        
+        <svg class="icon-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+          <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z"></path>
+        </svg>
+
+      </div>
+
+        <ul>
+ 
+           <div class="link">
+           <li>Apple pushes back on remote work </li>
+
+           <span class="link-undertext-1">1d ago • 204,141 readers</span>
+          
+          </div>
+          <div class="link">
+            <li>Apple pushes back on remote work </li>
+
+            
+           <span class="undertext-2">1d ago • 204,141 readers</span>
+           
+           </div>
+
+           <div class="link">
+            <li>Apple pushes back on remote work </li>
+
+            
+           <span class="link-undertext-3">1d ago • 204,141 readers</span>
+           
+           </div>
+
+           <div class="link">
+            <li>Apple pushes back on remote work </li>
+
+            
+           <span class="link-undertext-4">1d ago • 204,141 readers</span>
+           
+           </div>
+
+           <div class="link link-last">
+             
+            <h4>Show more</h4>
+            <span class="material-icons">
+              expand_more
+              </span>
+            
+            </div>
+ 
+
+
+
+        </ul>
+
+      
+       </div>
+
+       <div class="Second-right">
+
+
+        <div class="first-part">
+
+          <h4 class="right-para-main"> Today’s top courses</h4>
+          
+          <svg class="icon-right" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false">
+            <path d="M12 2H4a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2V4a2 2 0 00-2-2zm-3 8v2H7.5A1.5 1.5 0 016 10.5a1.56 1.56 0 01.1-.5l1.08-3h2.13l-1.09 3zm0-3.75A1.25 1.25 0 1110.25 5 1.25 1.25 0 019 6.25z"></path>
+          </svg>
+  
+        </div>
+  
+          <ol type="1">
+   
+             <div class="link">
+             <li>Speaking Confidently and Effectively </li>
+  
+             <span class="link-undertext-1">Pete Mockaitis | How to Be Awesome at Your Job</span>
+            
+            </div>
+            <div class="link">
+              <li> DevOps Foundations</li>
+  
+              
+             <span class="undertext-2">James Wickett and Ernest Mueller</span>
+             
+             </div>
+  
+             <div class="link">
+              <li>AUnconscious Bias</li>
+  
+              
+             <span class="link-undertext-3">Stacey Gordon</span>
+             
+             </div>
+  
+             <div class="link link-last">
+             
+             <h4>Show more on LinkedIn Learning</h4>
+              
+             <span class="material-icons">
+              arrow_forward
+              </span>
+             
+             </div>
+   
+  
+  
+  
+          </ol>        
+ 
+
+       </div>
+ 
+        <div class="last-image">
+
+
+        <img class="last-right-image" src="Last.png">
+
+
+
+        </div>
+
+
+
+
+
+
+
+      </div>
+    </div>
+  </body>
+</html>
